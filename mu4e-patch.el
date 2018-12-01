@@ -3,6 +3,28 @@
 ;; Copyright (C) 2011 Frank Terbeck.
 ;; Copyright (C) 2018 Sean Farley.
 
+;; Author: Sean Farley
+;; URL: https://github.com/seanfarley/mu4e-patch
+;; Version: 0.1.0
+;; Created: 2018-06-15
+;; Package-Requires: ((emacs "24.4"))
+;; Keywords: extensions processes bw bitwarden
+
+;;; License
+
+;; This program is free software: you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 ;;; Commentary:
 
 ;; This is adapted from Frank Terbeck's gnus-article-treat-patch.el but has
@@ -530,4 +552,5 @@ borrowing the highlighting faces for from `diff-mode'."
             (mu4e~patch-state-machine))))))
 
 (provide 'mu4e-patch)
+
 ;;; mu4e-patch ends here
