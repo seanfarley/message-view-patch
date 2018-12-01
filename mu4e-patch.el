@@ -264,16 +264,17 @@ a unified diff"
 Run through `mu4e-patch-regex' to determine
 whether patch treatment is wanted or not."
   (catch 'done
-    (dolist (entry mu4e-patch-regex)
-      (cond
-       ((stringp entry)
-        (if (re-search-forward entry nil t)
-            (throw 'done t)))
-       (t
-        (if (eval entry)
-            (throw 'done t)))))
-      (throw 'done nil)))
-
+    (save-excursion
+      (goto-char (point-min))
+      (dolist (entry mu4e-patch-regex)
+        (cond
+         ((stringp entry)
+          (if (re-search-forward entry nil t)
+              (throw 'done t)))
+         (t
+          (if (eval entry)
+              (throw 'done t)))))
+      (throw 'done nil))))
 
 ;; The actual treatment code
 (defun mu4e~patch-state-machine ()
