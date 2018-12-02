@@ -1,0 +1,18 @@
+#+TITLE: README
+
+*  mu4e-patch
+
+=mu4e= extension to colorize patch-like emails. Based on
+[[https://github.com/orgcandman/emacs-plugins/blob/master/gnus-article-treat-patch.el][gnus-article-treat-patch.el]] and adapted to work with =mu4e=.
+
+Currently, this extension should be considered beta quality.
+
+* Installation
+
+Until this is considered stable, clone this repo and put it somewhere in your
+=load-path=. Then, add a hook,
+
+#+BEGIN_SRC emacs-lisp
+  ;; colorize patch-based emails
+  (add-hook 'mu4e-view-mode-hook #'mu4e-patch-highlight)
+#+END_SRC
