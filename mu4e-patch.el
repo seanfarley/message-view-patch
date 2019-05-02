@@ -142,7 +142,8 @@ the commit message)."
     ("^Reviewed-by: "   'mu4e-header-key-face 'mu4e-header-value-face)
     ("^Signed-off-by: " 'mu4e-header-key-face 'mu4e-header-value-face)
     ("^Subject: "       'mu4e-header-key-face 'mu4e-header-value-face)
-    ("^Suggested-by: "  'mu4e-header-key-face 'mu4e-header-value-face))
+    ("^Suggested-by: "  'mu4e-header-key-face 'mu4e-header-value-face)
+    ("^Tested-by: "     'mu4e-header-key-face 'mu4e-header-value-face))
   "List of lists of regular expressions (with two face names)
 which are used to determine the highlighting of pseudo headers in
 the commit message (such as \"Signed-off-by:\").
