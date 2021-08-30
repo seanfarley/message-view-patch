@@ -8,7 +8,7 @@
 ;; Version: 0.1.0
 ;; Created: 2018-06-15
 ;; Package-Requires: ((emacs "24.4"))
-;; Keywords: extensions processes bw bitwarden
+;; Keywords: extensions mu4e
 
 ;;; License
 
