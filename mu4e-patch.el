@@ -7,7 +7,7 @@
 ;; URL: https://github.com/seanfarley/mu4e-patch
 ;; Version: 0.1.0
 ;; Created: 2018-06-15
-;; Package-Requires: ((emacs "24.4"))
+;; Package-Requires: ((emacs "24.4") (magit "3.0.0"))
 ;; Keywords: extensions mu4e
 
 ;;; License
@@ -33,6 +33,7 @@
 ;;; Code:
 
 (require 'diff-mode)
+(require 'magit)
 
 ;; Customs
 (defgroup mu4e-patch nil
@@ -57,57 +58,57 @@ The code needs to return t if treatment is wanted."
   :group 'faces)
 
 (defface mu4e-patch-three-dashes
-  '((t :foreground "brightblue"))
+  '((t :inherit diff-header))
   "Face for the three dashes in a diff header."
   :group 'mu4e-patch-faces)
 
 (defface mu4e-patch-scissors
-  '((t :foreground "brown"))
+  '((t :inherit diff-header))
   "Face for the scissors 8< lines."
   :group 'mu4e-patch-faces)
 
 (defface mu4e-patch-diff-index
-  '((t :foreground "brightmagenta"))
+  '((t :inherit diff-header))
   "Face for the diff index."
   :group 'mu4e-patch-faces)
 
 (defface mu4e-patch-diff-hunk
-  '((t :foreground "brightblue"))
+  '((t :inherit magit-diff-hunk-heading))
   "Face for the diff hunk."
   :group 'mu4e-patch-faces)
 
 (defface mu4e-patch-diff-equals
-  '((t :foreground "brightmagenta"))
+  '((t :inherit diff-header))
   "Face for the line of equal signs that some diffs have."
   :group 'mu4e-patch-faces)
 
 (defface mu4e-patch-commit-message
-  '((t :foreground "white"))
+  '((t :inherit magit-section-highlight))
   "Face for the commit message."
   :group 'mu4e-patch-faces)
 
 (defface mu4e-patch-diff-stat-file
-  '((t :foreground "yellow"))
+  '((t :inherit magit-filename))
   "Face for the file stats."
   :group 'mu4e-patch-faces)
 
 (defface mu4e-patch-diff-stat-bar
-  '((t :foreground "magenta"))
+  '((t :inherit magit-section-highlight))
   "Face for the stat bar separator."
   :group 'mu4e-patch-faces)
 
 (defface mu4e-patch-diff-stat-num
-  '((t :foreground "white"))
+  '((t :inherit magit-section-highlight))
   "Face for the stat number column."
   :group 'mu4e-patch-faces)
 
 (defface mu4e-patch-misc
-  '((t :foreground "magenta"))
+  '((t :inherit magit-diff-file-heading-highlight))
   "Face for the \"misc line\" part of the diff."
   :group 'mu4e-patch-faces)
 
 (defface mu4e-patch-commit-comment
-  '((t :inherit default))
+  '((t :inherit magit-section-highlight))
   "Face for the commit part of the diff.
 
 E.g. between two ---'s after the commit message)."
@@ -124,12 +125,12 @@ E.g. between two ---'s after the commit message)."
   :group 'mu4e-patch-faces)
 
 (defface mu4e-patch-diff-removed
-  '((t :inherit diff-removed))
+  '((t :inherit magit-diff-removed))
   "Face for the diff lines that are removed."
   :group 'mu4e-patch-faces)
 
 (defface mu4e-patch-diff-context
-  '((t :inherit default))
+  '((t :inherit magit-diff-context))
   "Face for the context lines in the diff."
   :group 'mu4e-patch-faces)
 
