@@ -133,6 +133,41 @@ E.g. between two ---'s after the commit message)."
   "Face for the context lines in the diff."
   :group 'mu4e-patch-faces)
 
+(defface mu4e-patch-cite-1
+  '((t :inherit mu4e-cited-1-face))
+  "Face for cited message parts (level 1)."
+  :group 'mu4e-patch-faces)
+
+(defface mu4e-patch-cite-2
+  '((t :inherit mu4e-cited-2-face))
+  "Face for cited message parts (level 2)."
+  :group 'mu4e-patch-faces)
+
+(defface mu4e-patch-cite-3
+  '((t :inherit mu4e-cited-3-face))
+  "Face for cited message parts (level 3)."
+  :group 'mu4e-patch-faces)
+
+(defface mu4e-patch-cite-4
+  '((t :inherit mu4e-cited-4-face))
+  "Face for cited message parts (level 4)."
+  :group 'mu4e-patch-faces)
+
+(defface mu4e-patch-cite-5
+  '((t :inherit mu4e-cited-5-face))
+  "Face for cited message parts (level 5)."
+  :group 'mu4e-patch-faces)
+
+(defface mu4e-patch-cite-6
+  '((t :inherit mu4e-cited-6-face))
+  "Face for cited message parts (level 6)."
+  :group 'mu4e-patch-faces)
+
+(defface mu4e-patch-cite-7
+  '((t :inherit mu4e-cited-7-face))
+  "Face for cited message parts (level 7)."
+  :group 'mu4e-patch-faces)
+
 ;; Pseudo-headers
 (defcustom mu4e-patch-pseudo-headers
   '(("^Acked-by: "      'mu4e-header-key-face 'mu4e-header-value-face)
@@ -282,6 +317,18 @@ a unified diff"
    ((string-match "^\\( *--* *\\(8<\\|>8\\)\\)+ *-* *$" line) t)
    (t nil)))
 
+(defun mu4e-patch-reply-line-p (line)
+  "Return face if `LINE' is a reply to previous message; nil otherwise."
+  (cond
+   ((string-match "^> *> *> *> *> *> *>" line) 'mu4e-patch-cite-7)
+   ((string-match "^> *> *> *> *> *> "   line) 'mu4e-patch-cite-6)
+   ((string-match "^> *> *> *> *> "      line) 'mu4e-patch-cite-5)
+   ((string-match "^> *> *> *> "         line) 'mu4e-patch-cite-4)
+   ((string-match "^> *> *> "            line) 'mu4e-patch-cite-3)
+   ((string-match "^> *> "               line) 'mu4e-patch-cite-2)
+   ((string-match "^> "                  line) 'mu4e-patch-cite-1)
+   (t nil)))
+
 ;; Patch mail detection
 (defun mu4e-patch-want-treatment ()
   "Return t if patch treatment is wanted.
@@ -411,6 +458,9 @@ The state machine works like this:
                  ((mu4e-patch-atp-looks-like-diff line)
                   (setq do-not-move t)
                   'unified-diff)
+                 ((mu4e-patch-reply-line-p line)
+                  (mu4e-patch-color-line (mu4e-patch-reply-line-p line))
+                  'commit-message)
                  (t
                   (mu4e-patch-color-line 'mu4e-patch-commit-message)
                   'commit-message)))
@@ -426,6 +476,9 @@ The state machine works like this:
                  ((mu4e-patch-atp-looks-like-diff line)
                   (setq do-not-move t)
                   'unified-diff)
+                 ((mu4e-patch-reply-line-p line)
+                  (mu4e-patch-color-line (mu4e-patch-reply-line-p line))
+                  'commit-message)
                  (t
                   (mu4e-patch-color-line 'mu4e-patch-commit-comment)
                   'commit-comment)))
