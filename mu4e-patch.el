@@ -508,6 +508,10 @@ The state machine works like this:
                  ((string-match "^\\+" line)
                   (mu4e-patch-color-line 'mu4e-patch-diff-added)
                   'unified-diff)
+                 ((string-match "^-- $" line) ;; rare that the entire line exactly "-- " so just treat
+                                              ;; as a git-diff ending marker
+                  (mu4e-patch-color-line 'mu4e-patch-diff-header)
+                  'unified-diff)
                  ((string-match "^-" line)
                   (mu4e-patch-color-line 'mu4e-patch-diff-removed)
                   'unified-diff)
