@@ -1,7 +1,7 @@
 ;;; mu4e-patch.el --- Colorize patch-like emails in mu4e
 
 ;; Copyright (C) 2011 Frank Terbeck.
-;; Copyright (C) 2018 Sean Farley.
+;; Copyright (C) 2018-2021 Sean Farley.
 
 ;; Author: Sean Farley
 ;; URL: https://github.com/seanfarley/mu4e-patch
