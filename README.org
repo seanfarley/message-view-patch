@@ -2,10 +2,9 @@
 
 *  message-view-patch
 
-=mu4e= extension to colorize patch-like emails. Based on
-[[https://github.com/orgcandman/emacs-plugins/blob/master/gnus-article-treat-patch.el][gnus-article-treat-patch.el]] and adapted to work with =mu4e=.
-
-Currently, this extension should be considered beta quality.
+=mu4e= and =gnus= extension to colorize patch-like emails. Based on
+[[https://github.com/orgcandman/emacs-plugins/blob/master/gnus-article-treat-patch.el][gnus-article-treat-patch.el]] and adapted to work with =mu4e=. It also continues
+to work with =gnus=.
 
 * Installation
 
