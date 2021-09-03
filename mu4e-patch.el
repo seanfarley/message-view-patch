@@ -33,6 +33,7 @@
 ;;; Code:
 
 (require 'diff-mode)
+(require 'gnus)
 (require 'magit)
 
 ;; Customs
@@ -135,52 +136,52 @@ E.g. between two ---'s after the commit message)."
   :group 'mu4e-patch-faces)
 
 (defface mu4e-patch-cite-1
-  '((t :inherit mu4e-cited-1-face))
+  '((t :inherit gnus-cite-1))
   "Face for cited message parts (level 1)."
   :group 'mu4e-patch-faces)
 
 (defface mu4e-patch-cite-2
-  '((t :inherit mu4e-cited-2-face))
+  '((t :inherit gnus-cite-2))
   "Face for cited message parts (level 2)."
   :group 'mu4e-patch-faces)
 
 (defface mu4e-patch-cite-3
-  '((t :inherit mu4e-cited-3-face))
+  '((t :inherit gnus-cite-3))
   "Face for cited message parts (level 3)."
   :group 'mu4e-patch-faces)
 
 (defface mu4e-patch-cite-4
-  '((t :inherit mu4e-cited-4-face))
+  '((t :inherit gnus-cite-4))
   "Face for cited message parts (level 4)."
   :group 'mu4e-patch-faces)
 
 (defface mu4e-patch-cite-5
-  '((t :inherit mu4e-cited-5-face))
+  '((t :inherit gnus-cite-5))
   "Face for cited message parts (level 5)."
   :group 'mu4e-patch-faces)
 
 (defface mu4e-patch-cite-6
-  '((t :inherit mu4e-cited-6-face))
+  '((t :inherit gnus-cite-6))
   "Face for cited message parts (level 6)."
   :group 'mu4e-patch-faces)
 
 (defface mu4e-patch-cite-7
-  '((t :inherit mu4e-cited-7-face))
+  '((t :inherit gnus-cite-7))
   "Face for cited message parts (level 7)."
   :group 'mu4e-patch-faces)
 
 ;; Pseudo-headers
 (defcustom mu4e-patch-pseudo-headers
-  '(("^Acked-by: "      'mu4e-header-key-face 'mu4e-header-value-face)
-    ("^C\\(c\\|C\\): "  'mu4e-header-key-face 'mu4e-header-value-face)
-    ("^From: "          'mu4e-header-key-face 'mu4e-header-value-face)
-    ("^Link: "          'mu4e-header-key-face 'mu4e-header-value-face)
-    ("^Reported-by: "   'mu4e-header-key-face 'mu4e-header-value-face)
-    ("^Reviewed-by: "   'mu4e-header-key-face 'mu4e-header-value-face)
-    ("^Signed-off-by: " 'mu4e-header-key-face 'mu4e-header-value-face)
-    ("^Subject: "       'mu4e-header-key-face 'mu4e-header-value-face)
-    ("^Suggested-by: "  'mu4e-header-key-face 'mu4e-header-value-face)
-    ("^Tested-by: "     'mu4e-header-key-face 'mu4e-header-value-face))
+  '(("^Acked-by: "      'gnus-header-name 'gnus-header-from)
+    ("^C\\(c\\|C\\): "  'gnus-header-name 'gnus-header-from)
+    ("^From: "          'gnus-header-name 'gnus-header-from)
+    ("^Link: "          'gnus-header-name 'gnus-header-from)
+    ("^Reported-by: "   'gnus-header-name 'gnus-header-from)
+    ("^Reviewed-by: "   'gnus-header-name 'gnus-header-from)
+    ("^Signed-off-by: " 'gnus-header-name 'gnus-header-from)
+    ("^Subject: "       'gnus-header-name 'gnus-header-from)
+    ("^Suggested-by: "  'gnus-header-name 'gnus-header-from)
+    ("^Tested-by: "     'gnus-header-name 'gnus-header-from))
   "List of lists of regular expressions (with two face names)
 which are used to determine the highlighting of pseudo headers in
 the commit message (such as \"Signed-off-by:\").
