@@ -522,6 +522,7 @@ The state machine works like this:
             (if (> (forward-line) 0)
                 (throw 'mu4e-patch-atp-done t)))))))
 
+;;;###autoload
 (defun mu4e-patch-highlight ()
   "Highlight mail parts, that look like patches.
 
