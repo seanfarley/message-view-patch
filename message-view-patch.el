@@ -5,7 +5,7 @@
 
 ;; Author: Sean Farley
 ;; URL: https://github.com/seanfarley/message-view-patch
-;; Version: 0.1.0
+;; Version: 0.2.0
 ;; Created: 2018-06-15
 ;; Package-Requires: ((emacs "24.4") (magit "3.0.0"))
 ;; Keywords: extensions mu4e gnus
