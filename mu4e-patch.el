@@ -1,4 +1,4 @@
-;;; mu4e-patch.el --- Colorize patch-like emails in mu4e
+;;; mu4e-patch.el --- Colorize patch-like emails in mu4e -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2011 Frank Terbeck.
 ;; Copyright (C) 2018-2021 Sean Farley.
