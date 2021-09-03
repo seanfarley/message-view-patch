@@ -8,8 +8,8 @@ to work with =gnus=.
 
 * Installation
 
-Until this is considered stable, clone this repo and put it somewhere in your
-=load-path=. Then, add a hook,
+While the melpa recipe goes through review, you'll need to clone this repo and
+put it somewhere in your =load-path=. Then, add a hook,
 
 #+BEGIN_SRC emacs-lisp
 ;; colorize patch-based emails
