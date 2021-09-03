@@ -8,7 +8,7 @@
 ;; Version: 0.1.0
 ;; Created: 2018-06-15
 ;; Package-Requires: ((emacs "24.4") (magit "3.0.0"))
-;; Keywords: extensions mu4e
+;; Keywords: extensions mu4e gnus
 
 ;;; License
 
