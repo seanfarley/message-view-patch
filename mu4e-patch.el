@@ -226,7 +226,7 @@ pseudo-header is."
         (overlay-put (make-overlay value e) 'face (nth 2 data))))))
 
 ;; diff-stat
-(defun mu4e-patch-diff-stat-color (line)
+(defun mu4e-patch-diff-stat-color ()
   "Colorize a diff-stat `LINE'."
   (let ((s (point-at-bol))
         (e (point-at-eol))
@@ -240,7 +240,6 @@ pseudo-header is."
 
     (goto-char pm)
     (let* ((plus (looking-at "\\+"))
-           (regex (if plus "-+" "\\++"))
            (brk (if plus
                     (re-search-forward "-" e t)
                   (re-search-forward "\\+" e t)))
@@ -254,7 +253,7 @@ pseudo-header is."
           (overlay-put (make-overlay pm brk) 'face first-face)
           (overlay-put (make-overlay brk e) 'face second-face))))))
 
-(defun mu4e-patch-diff-stat-summary-color (line)
+(defun mu4e-patch-diff-stat-summary-color ()
   "Colorize a diff-stat summary `LINE'."
   (let* ((e (point-at-eol))
          (plus (- (re-search-forward "(\\+)" e t) 2))
@@ -469,10 +468,10 @@ The state machine works like this:
                ((eq state 'commit-comment)
                 (cond
                  ((mu4e-patch-diff-stat-line-p line)
-                  (mu4e-patch-diff-stat-color line)
+                  (mu4e-patch-diff-stat-color)
                   'commit-comment)
                  ((mu4e-patch-diff-stat-summary-p line)
-                  (mu4e-patch-diff-stat-summary-color line)
+                  (mu4e-patch-diff-stat-summary-color)
                   'commit-comment)
                  ((mu4e-patch-atp-looks-like-diff line)
                   (setq do-not-move t)
