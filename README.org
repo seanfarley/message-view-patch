@@ -1,6 +1,6 @@
 #+TITLE: README
 
-*  mu4e-patch
+*  message-view-patch
 
 =mu4e= extension to colorize patch-like emails. Based on
 [[https://github.com/orgcandman/emacs-plugins/blob/master/gnus-article-treat-patch.el][gnus-article-treat-patch.el]] and adapted to work with =mu4e=.
@@ -14,9 +14,9 @@ Until this is considered stable, clone this repo and put it somewhere in your
 
 #+BEGIN_SRC emacs-lisp
 ;; colorize patch-based emails
-(add-hook 'gnus-part-display-hook 'mu4e-patch-highlight)
+(add-hook 'gnus-part-display-hook 'message-view-patch-highlight)
 ;; for `mu4e-view-use-old'
-(add-hook 'mu4e-view-mode-hook #'mu4e-patch-highlight)
+(add-hook 'mu4e-view-mode-hook #'message-view-patch-highlight)
 #+END_SRC
 
 * Using the old mu4e-view
@@ -26,10 +26,10 @@ the =mu4e= faces, too. For that, the following code might be helpful,
 
 #+begin_src emacs-lisp
 (require 'mu4e)
-(require 'mu4e-patch)
+(require 'message-view-patch)
 
 (setq mu4e-view-use-old t
-      mu4e-patch-pseudo-headers
+      message-view-patch-pseudo-headers
       '(("^Acked-by: "      'mu4e-header-key-face 'mu4e-header-value-face)
         ("^C\\(c\\|C\\): "  'mu4e-header-key-face 'mu4e-header-value-face)
         ("^From: "          'mu4e-header-key-face 'mu4e-header-value-face)
@@ -40,12 +40,11 @@ the =mu4e= faces, too. For that, the following code might be helpful,
         ("^Subject: "       'mu4e-header-key-face 'mu4e-header-value-face)
         ("^Tested-by: "     'mu4e-header-key-face 'mu4e-header-value-face)))
 
-(set-face-attribute 'mu4e-patch-cite-1 nil :inherit 'mu4e-cited-1-face)
-(set-face-attribute 'mu4e-patch-cite-2 nil :inherit 'mu4e-cited-2-face)
-(set-face-attribute 'mu4e-patch-cite-3 nil :inherit 'mu4e-cited-3-face)
-(set-face-attribute 'mu4e-patch-cite-4 nil :inherit 'mu4e-cited-4-face)
-(set-face-attribute 'mu4e-patch-cite-5 nil :inherit 'mu4e-cited-5-face)
-(set-face-attribute 'mu4e-patch-cite-6 nil :inherit 'mu4e-cited-6-face)
-(set-face-attribute 'mu4e-patch-cite-7 nil :inherit 'mu4e-cited-7-face)
-
+(set-face-attribute 'message-view-patch-cite-1 nil :inherit 'mu4e-cited-1-face)
+(set-face-attribute 'message-view-patch-cite-2 nil :inherit 'mu4e-cited-2-face)
+(set-face-attribute 'message-view-patch-cite-3 nil :inherit 'mu4e-cited-3-face)
+(set-face-attribute 'message-view-patch-cite-4 nil :inherit 'mu4e-cited-4-face)
+(set-face-attribute 'message-view-patch-cite-5 nil :inherit 'mu4e-cited-5-face)
+(set-face-attribute 'message-view-patch-cite-6 nil :inherit 'mu4e-cited-6-face)
+(set-face-attribute 'message-view-patch-cite-7 nil :inherit 'mu4e-cited-7-face)
 #+end_src
