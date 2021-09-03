@@ -6,6 +6,9 @@
 [[https://github.com/orgcandman/emacs-plugins/blob/master/gnus-article-treat-patch.el][gnus-article-treat-patch.el]] and adapted to work with =mu4e=. It also continues
 to work with =gnus=.
 
+This package was renamed from =mu4e-patch= to =message-view-patch= to reflect
+that it works with both =mu4e= and =gnus= (and maybe others?).
+
 * Installation
 
 While the melpa recipe goes through review, you'll need to clone this repo and
