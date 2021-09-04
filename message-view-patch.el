@@ -247,7 +247,7 @@ pseudo-header is."
            (first-face (if plus 'message-view-patch-diff-added 'message-view-patch-diff-removed))
            (second-face (if plus 'message-view-patch-diff-removed 'message-view-patch-diff-added)))
 
-      (if (eq brk nil)
+      (if (null brk)
           (overlay-put (make-overlay pm e) 'face first-face)
         (progn
           (setq brk (- brk 1))
