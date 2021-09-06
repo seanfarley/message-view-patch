@@ -17,8 +17,6 @@ put it somewhere in your =load-path=. Then, add a hook,
 #+BEGIN_SRC emacs-lisp
 ;; colorize patch-based emails
 (add-hook 'gnus-part-display-hook 'message-view-patch-highlight)
-;; for `mu4e-view-use-old'
-(add-hook 'mu4e-view-mode-hook #'message-view-patch-highlight)
 #+END_SRC
 
 * Using the old mu4e-view
@@ -29,6 +27,8 @@ the =mu4e= faces, too. For that, the following code might be helpful,
 #+begin_src emacs-lisp
 (require 'mu4e)
 (require 'message-view-patch)
+
+(add-hook 'mu4e-view-mode-hook #'message-view-patch-highlight)
 
 (setq mu4e-view-use-old t
       message-view-patch-pseudo-headers
