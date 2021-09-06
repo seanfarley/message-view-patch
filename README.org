@@ -1,5 +1,7 @@
 #+TITLE: README
 
+[[https://melpa.org/#/message-view-patch][file:https://melpa.org/packages/message-view-patch-badge.svg]]
+
 *  message-view-patch
 
 =mu4e= and =gnus= extension to colorize patch-like emails. Based on
@@ -11,8 +13,10 @@ that it works with both =mu4e= and =gnus= (and maybe others?).
 
 * Installation
 
-While the melpa recipe goes through review, you'll need to clone this repo and
-put it somewhere in your =load-path=. Then, add a hook,
+The package =message-view-patch= may be installed directly from [[https://melpa.org/#/org-ql][MELPA]] or with other tools
+like [[https://github.com/raxod502/straight.el][straight.el]].
+
+After installation, add the hook,
 
 #+BEGIN_SRC emacs-lisp
 ;; colorize patch-based emails
